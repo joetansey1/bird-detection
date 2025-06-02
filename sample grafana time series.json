@@ -1,0 +1,8 @@
+from(bucket: "birdnet")
+  |> range(start: -168h)
+  |> filter(fn: (r) => r._measurement == "detections")
+  |> filter(fn: (r) => r._field == "confidence")
+  |> aggregateWindow(every: 10m, fn: count, createEmpty: false)
+  |> group(columns: ["species"])
+  |> keep(columns: ["_time", "_value", "species"])  // 👈 this is critical!
+  |> yield(name: "counts")
