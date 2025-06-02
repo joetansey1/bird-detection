@@ -9,7 +9,7 @@ import requests
 INFLUX_URL = "http://localhost:8086/api/v2/write"
 INFLUX_BUCKET = "birdnet"
 INFLUX_ORG = "localorg"
-INFLUX_TOKEN = "HzqaSJhhHpPfdbYq4PJ7hawzux5u5_DsQGd5ByYQf0Hpd6vGNd6UwsgV09Q_ieu-dUinROiqHadWBrs_7_pyWg==" # Make sur>
+INFLUX_TOKEN = "your InfluxDB Token here>"
 
 RECORD_SECONDS = 20
 SLEEP_SECONDS = 5
