@@ -1,0 +1,8 @@
+from(bucket: "birdnet")
+  |> range(start: -168h)
+  |> filter(fn: (r) => r._measurement == "detections")
+  |> filter(fn: (r) => r._field == "confidence")
+  |> group(columns: ["species"])
+  |> count()
+  |> group()
+  |> sort(columns: ["_value"], desc: true)
